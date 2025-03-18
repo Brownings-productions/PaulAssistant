@@ -17,12 +17,25 @@ pull(Model)
 
 while True:
   user_input = input()
-  response = chat(
+  stream = chat(
     model=Model,
     messages=messages + [{'role': 'user', 'content': user_input},],
+    stream=True,
   )
-  # Add the response to the messages to maintain the history
   messages.append({'role': 'user', 'content': user_input})
-  messages.append({'role': 'assistant', 'content': response.message.content})
   
-  print(response.message.content + '\n')
+  totalResponse = ' '
+
+    # Add the response to the messages to maintain the history
+  for chunk in stream:
+    
+    totalResponse += ' ' + chunk.message.content
+        
+    print(chunk.message.content, end='', flush=True)	
+  messages.append({'role': 'assistant', 'content': totalResponse})
+  print('\n')
+
+
+
+
+
