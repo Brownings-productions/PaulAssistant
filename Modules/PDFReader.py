@@ -5,6 +5,7 @@ import os
 def to_raw(string):
     return fr"{string}"
 
+
 def pdf_path(file_name):
     root_path = os.path.abspath(os.path.join("Archives", file_name))
     # Get the absolute path of the PDF file
