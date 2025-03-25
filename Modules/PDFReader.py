@@ -1,6 +1,7 @@
 import fitz  # PyMuPDF
 import pymupdf4llm as pymu
 import os
+import json
 
 def to_raw(string):
     return fr"{string}"
@@ -14,29 +15,34 @@ def extract_text_from_pdf():
     pdf_file = "BMW.pdf"
 
     pdf_file_path = pdf_path(pdf_file)
-    output_file = "output.txt"
 
     try:
-        # Open the PDF file
-        doc = fitz.open(to_raw(pdf_file_path))
-        out = open("output.txt", "w", encoding="utf-8")
+        doc=fitz.open(to_raw(pdf_file_path))
 
-        for page in doc:
-            text = page.get_text()
-            out.write(text + "\n")
-        out.close()
-
-        with open("output.txt", "r", encoding="utf-8") as file:
-            text = file.read()  
-        return text
+        result = []
 
 
-#        with open(output_file, "w", encoding="utf-8") as out:
-#            for page in doc:
-#                text = page.get_text()
-#                out.write(text + "\n")  # Ensure line breaks
-#        print("this is a controll message no scam")
-#        return doc
+        #for page in doc:
+        #    block = page.get_text("blocks")
+        #    for block in blocks:
+
+
+
+
+
+
+        #Open the PDF file
+    #    doc = fitz.open(to_raw(pdf_file_path))
+    #    out = open("output.txt", "w", encoding="utf-8")
+#
+    #    for page in doc:
+    #        text = page.get_text()
+    #        out.write(text + "\n")
+    #    out.close()
+#
+    #    with open("output.txt", "r", encoding="utf-8") as file:
+    #        text = file.read()  
+    #    return text
 
     except Exception as e:
         print(f"Error: {e}")
