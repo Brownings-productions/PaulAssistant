@@ -1,5 +1,14 @@
 {
-    "prosessed pdf": [
-        "chunk"
+    "processed pdf": [ 
+        {
+            "text" : "Sample text.",
+            "metadata" : [
+                {
+                    "pdfsource" : "example/path/to/pdf",
+                    "page_id" : 0,
+                    "chunk_id" : 0
+                }
+            ]
+        }
     ]
 }
