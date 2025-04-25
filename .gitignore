@@ -1,0 +1,7 @@
+#Ignore the folder made by virtual enviroment creator
+/venv
+
+#Ignore all files stored in the Archives and Database folders
+
+Archives/
+Database/
